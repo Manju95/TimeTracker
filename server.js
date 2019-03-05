@@ -6,7 +6,7 @@ var bodyparser=require('body-parser');
 var port=process.env.port || 3001;
 var cors=require('cors');
 
-process.env["NODE_TLS_REJECT_UNAUTHORIZED"]=0;
+//process.env["NODE_TLS_REJECT_UNAUTHORIZED"]=0;
 
 app.listen(port,()=>console.log("server is running"));
 app.use(bodyparser.json({type:'*/*'}));
