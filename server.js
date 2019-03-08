@@ -1,10 +1,10 @@
 var express=require('express');
 var app=express();
-var config=require('./config');
-var firebase=require('firebase');
+//var config=require('./config');
+//var firebase=require('firebase');
 var bodyparser=require('body-parser');
 var port=process.env.port || 3001;
-var cors=require('cors');
+//var cors=require('cors');
 
 //process.env["NODE_TLS_REJECT_UNAUTHORIZED"]=0;
 
@@ -12,7 +12,7 @@ app.set('port',port);
 app.listen(port,()=>console.log("server is running"));
 app.use(bodyparser.json({type:'*/*'}));
 app.use(bodyparser.urlencoded({extended:true}));
-app.use(cors());
+//app.use(cors());
 
 
 // var time=firebase.database.ServerValue.TIMESTAMP;
@@ -22,7 +22,7 @@ app.get('/getmsg',(req,res)=>res.send("Hey server is running"));
 
 app.post('/person',(req,res)=>res.send(req.body.name));
 
-firebase.initializeApp(config);
+//firebase.initializeApp(config);
 //firebase.database.enableLogging(true);
 
 app.get('/gettasks',(req,res)=>{
